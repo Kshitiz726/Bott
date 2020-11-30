@@ -321,13 +321,10 @@ function gotMessage(message){
                   // Log the error
                   console.error(err);
                 }); }
-            } else {
-              // The mentioned user isn't in this guild
-              message.reply("That user isn't in this guild!");
             }
             // Otherwise, if no user was mentioned
           } else {
-            message.reply("You didn't mention the user to kick!");
+            message.reply("You didn't mention the user in this server to kick!");
           }
         }
         if (message.content.startsWith(prefix + 'ban')) {
