@@ -7,6 +7,9 @@ client.login(process.env.TOKEN);
 const api = require('covidapi');
 client.on('ready', readyDiscord);
 
+const alexa = require('alexa-bot-api')
+var chatbot = new alexa("awplm")
+
 
 function readyDiscord(){
     console.log('ready');
@@ -30,49 +33,6 @@ const prefix = 'h!';
 const cheerio = require('cheerio');
 const request = require('request');
 
-client.on('message', message => {
-    let args = message.content.substring(prefix.length).split(" ");
-
-    switch(args[0]){
-        case 'image':
-
-        image(message);
-
-        break;
-    }
-});
-
-function image(message){
-    var options = {
-      url: "https://www.google.com/imghp?q=" + "image",
-      method: "GET",
-      headers: {
-        "Accept": "text/html",
-        "User-Agent": "Chrome",
-      }
-    };
-    request(options, function (error, _response, responseBody) {
-            if (error) {
-                return;
-            }
-
-            $ = cheerio.load(responseBody);
-
-            var links = $(".image a.Link");
-
-            var urls = new Array(links.length).fill(0).map((_v, i) => links.eq(i).attr("href"));
-
-            console.log(urls);
-            if (!urls.length) {
-
-                return;
-            }
-
-
-
-            message.channel.send(urls[Math.floor(Math.random() * urls.length)] + " " + message.guild.members.random());
-        });
-  };
 const queue = new Map();
 
 client.once("ready", () => {
@@ -86,6 +46,13 @@ client.once("reconnecting", () => {
 client.once("disconnect", () => {
   console.log("Disconnect!");
 });
+client.on('message', async message => {
+
+  if(message.author.bot) return;
+  let content = message.content;
+  chatbot.getReply(content).then(r => message.channel.send(r))
+});
+
 //////covid 19///////////////////////////////////
 
 client.on('message', async message => {
@@ -279,7 +246,6 @@ function gotMessage(message){
         .addField("**Server Name:**", `${message.guild.name}`, true)
         .addField("**Server Owner:**", `${message.guild.owner}`, true)
         .addField("**Members:**", `${message.guild.memberCount}`, true)
-        .addField("**Roles:**", `${message.guild.roles.number}`, true)
          message.channel.send({embed: sEmbed});
     }
     if (message.content === prefix + 'userinfo') {
