@@ -278,13 +278,9 @@ function gotMessage(message){
         message.channel.send(`Your username: ${message.author.username}\nYour ID: ${message.author.id}`);
     }
     if(message.content === prefix + 'help') {
-        message.channel.send(exampleEmbed);
+        message.author.send(exampleEmbed);
         message.react('✅');
     }
-    if(message.content === prefix + 'hp') {
-      message.author.send('test');
-      message.react('✅');
-  }
     if (message.content === prefix + 'avatar') {
         const user = message.author;
     
