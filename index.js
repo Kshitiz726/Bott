@@ -96,13 +96,29 @@ client.on('message', async message => {
     .setColor("ff2050")
     .setTitle("Global Cases")
     .setDescription("Number of cases may differ from other sources")
-    .addField("Cases", data.cases)
-    .addField("Active", data.active)
-    .addField("Cases Today", data.todayCases)
-    .addField("Critical Cases", data.critical)
-    .addField("Deaths", data.deaths)
-    .addField("Recovered", data.recovered)
+    .addField("Cases", data.cases, true)
+    .addField("Active", data.active, true)
+    .addField("Cases Today", data.todayCases, true)
+    .addField("Critical Cases", data.critical, true)
+    .addField("Deaths", data.deaths, true)
+    .addField("Recovered", data.recovered, true)
      message.channel.send(coronaembed)
+  } else if(message.content.startsWith(`${prefix}covid`)) {
+    const countrycovid = message.content.slice(prefix.length).split(' ')
+    const countrydata = await api.countries({country: countrycovid})
+
+    const countryembed = Discord.MessageEmbed()
+    .setColor("ff2050")
+    .setTitle(`${countrycovid[1]} Cases`)
+    .setDescription("Number of cases may differ from other sources")
+    .addField("Cases", countrydata.cases, true)
+    .addField("Active", countrydata.active, true)
+    .addField("Cases Today", countrydata.todayCases, true)
+    .addField("Critical Cases", countrydata.critical, true)
+    .addField("Deaths", countrydata.deaths, true)
+    .addField("Recovered", countrydata.recovered, true)
+     message.channel.send(countryembed)
+
   }
 });
 
