@@ -7,8 +7,7 @@ client.login(process.env.TOKEN);
 const api = require('covidapi');
 client.on('ready', readyDiscord);
 
-const alexa = require('alexa-bot-api')
-var chatbot = new alexa("awplm")
+
 
 
 function readyDiscord(){
@@ -45,12 +44,6 @@ client.once("reconnecting", () => {
 
 client.once("disconnect", () => {
   console.log("Disconnect!");
-});
-client.on('message', async message => {
-
-  if(message.author.bot) return;
-  let content = message.content;
-  chatbot.getReply(content).then(r => message.channel.send(r))
 });
 
 //////covid 19///////////////////////////////////
