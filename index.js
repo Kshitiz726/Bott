@@ -281,6 +281,10 @@ function gotMessage(message){
         message.channel.send(exampleEmbed);
         message.react('✅');
     }
+    if(message.content === prefix + 'hp') {
+      message.author.send('test');
+      message.react('✅');
+  }
     if (message.content === prefix + 'avatar') {
         const user = message.author;
     
