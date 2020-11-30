@@ -274,13 +274,12 @@ function gotMessage(message){
         let sEmbed = new Discord.MessageEmbed()
         .setColor('#0099ff')
         .setTitle(`Server Info`)
-        .setThumbnail(message.guild.iconURL)
+        .setThumbnail('${message.guild.iconURL}')
         .setAuthor(`${message.guild.name} Info`, message.guild.iconURL)
-        .setDescription("Number of cases may differ from other sources")
         .addField("**Server Name:**", `${message.guild.name}`, true)
         .addField("**Server Owner:**", `${message.guild.owner}`, true)
         .addField("**Members:**", `${message.guild.memberCount}`, true)
-        .addField("**Roles:**", `${message.guild.roles.size}`, true)
+        .addField("**Roles:**", `${message.guild.roles}`, true)
          message.channel.send({embed: sEmbed});
     }
     if (message.content === prefix + 'userinfo') {
