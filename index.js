@@ -107,7 +107,7 @@ client.on('message', async message => {
     const countrycovid = message.content.slice(prefix.length).split(' ')
     const countrydata = await api.countries({country: countrycovid})
 
-    const countryembed = Discord.MessageEmbed()
+    const countryembed = new Discord.MessageEmbed()
     .setColor("ff2050")
     .setTitle(`${countrycovid[1]} Cases`)
     .setDescription("Number of cases may differ from other sources")
