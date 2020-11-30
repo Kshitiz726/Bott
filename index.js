@@ -279,7 +279,7 @@ function gotMessage(message){
         .addField("**Server Name:**", `${message.guild.name}`, true)
         .addField("**Server Owner:**", `${message.guild.owner}`, true)
         .addField("**Members:**", `${message.guild.memberCount}`, true)
-        .addField("**Roles:**", `${message.guild.roles}`, true)
+        .addField("**Roles:**", `${message.guild.roles.number}`, true)
          message.channel.send({embed: sEmbed});
     }
     if (message.content === prefix + 'userinfo') {
