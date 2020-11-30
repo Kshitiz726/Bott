@@ -4,7 +4,7 @@ console.log('Peep Peep!');
 const Discord = require('discord.js');
 const client = new Discord.Client();
 client.login(process.env.TOKEN);
-
+const api = require('covidapi');
 client.on('ready', readyDiscord);
 
 
@@ -87,6 +87,7 @@ client.once("disconnect", () => {
   console.log("Disconnect!");
 });
 //////covid 19///////////////////////////////////
+
 client.on('message', async message => {
   if(message.content === prefix + 'covid all'){
     api.all().then(console.log)
