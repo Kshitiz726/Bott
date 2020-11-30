@@ -86,6 +86,25 @@ client.once("reconnecting", () => {
 client.once("disconnect", () => {
   console.log("Disconnect!");
 });
+//////covid 19///////////////////////////////////
+client.on('message', async message => {
+  if(message.content === prefix + 'covid all'){
+    api.all().then(console.log)
+
+    const data = await api.all()
+    const coronaembed = new Discord.MessageEmbed()
+    .setColor("ff2050")
+    setTitle("Global Cases")
+    setDescription("Number of cases may differ from other sources")
+    .addField("Cases", data.cases)
+    .addField("Active", data.active)
+    .addField("Cases Today", data.todayCases)
+    .addField("Critical Cases", data.critical)
+    .addField("Deaths", data.deaths)
+    .addField("Recovered", data.recovered)
+    .message.channel.send(coronaembed)
+  }
+});
 
 client.on("message", async message => {
   if (message.author.bot) return;
