@@ -272,7 +272,7 @@ function gotMessage(message){
     }
     if (message.content === prefix + `serverinfo`) {
         let sEmbed = new Discord.MessageEmbed()
-        .setColor(colors.cyan)
+        .setColor('#0099ff')
         .setTitle(`Server Info`)
         .setThumbnail(message.guild.iconURL)
         .setAuthor(`${message.guild.name} Info`, message.guild.iconURL)
