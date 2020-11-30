@@ -102,7 +102,7 @@ client.on('message', async message => {
     .addField("Critical Cases", data.critical)
     .addField("Deaths", data.deaths)
     .addField("Recovered", data.recovered)
-    .message.channel.send(coronaembed)
+     message.channel.send(coronaembed)
   }
 });
 
