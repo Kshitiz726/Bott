@@ -323,10 +323,11 @@ function gotMessage(message){
                 }); }
             }
             // Otherwise, if no user was mentioned
-          } else {
+          
+          else {
             message.reply("You didn't mention the user in this server to kick!");
           }
-        }
+        }}
         if (message.content.startsWith(prefix + 'ban')) {
             // Assuming we mention someone in the message, this will return the user
             // Read more about mentions over at https://discord.js.org/#/docs/main/master/class/MessageMentions
