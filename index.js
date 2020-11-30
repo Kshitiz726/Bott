@@ -281,7 +281,7 @@ function gotMessage(message){
         .addField("**Server Owner:**", `${message.guild.owner}`, true)
         .addField("**Members:**", `${message.guild.memberCount}`, true)
         .addField("**Roles:**", `${message.guild.roles.size}`, true)
-        .setFooter("Jarvie | KewRiePie#8397", bot.user.displayAvatarURL);
+        .setFooter("Jarvie | KewRiePie#8397", Client.user.displayAvatarURL);
          message.channel.send({embed: sEmbed});
     }
     if (message.content === prefix + 'userinfo') {
