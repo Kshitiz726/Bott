@@ -328,11 +328,17 @@ function gotMessage(message){
             message.reply("You didn't mention the user in this server to kick!");
           }
         }}
+       
+        if(message.member.permissions.has("KICK_MEMBERS")) {
         if (message.content.startsWith(prefix + 'ban')) {
             // Assuming we mention someone in the message, this will return the user
             // Read more about mentions over at https://discord.js.org/#/docs/main/master/class/MessageMentions
+            if(!message.member.permissions.has("BAN_MEMBERS")){
+              return message.channel.send('You do not have permissions to ban members')
+            }
             const user = message.mentions.users.first();
             // If we have a user mentioned
+
             if (user) {
               // Now we get the member from the user
               const member = message.guild.member(user);
@@ -369,4 +375,4 @@ function gotMessage(message){
               // Otherwise, if no user was mentioned
               message.reply("You didn't mention the user to ban!");
             }
-        }};
+        }};}
