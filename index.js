@@ -88,7 +88,7 @@ client.once("disconnect", () => {
 });
 //////covid 19///////////////////////////////////
 client.on('message', async message => {
-  if(message.content === 'h!covid all'){
+  if(message.content === prefix + 'covid all'){
     api.all().then(console.log)
 
     const data = await api.all()
