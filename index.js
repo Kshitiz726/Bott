@@ -275,7 +275,7 @@ function gotMessage(message){
         .setColor('#0099ff')
         .setTitle(`Server Info`)
         .setThumbnail(message.guild.iconURL)
-        .setAuthor(`${message.guild.name} Info`)
+        .setAuthor(`${message.guild.name} Info`, message.guild.iconURL)
         .addField("**Server Name:**", `${message.guild.name}`, true)
         .addField("**Server Owner:**", `${message.guild.owner}`, true)
         .addField("**Members:**", `${message.guild.memberCount}`, true)
