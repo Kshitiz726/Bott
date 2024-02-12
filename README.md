@@ -1,16 +1,16 @@
-# Bott
+# Bott 🤖
 
 Bott is a simple Node.js application that demonstrates basic functionality. It serves as a starting point for building Node.js applications or for learning purposes.
 
-## Getting Started
+## Getting Started 🚀
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-### Prerequisites
+### Prerequisites 📋
 
 Ensure you have Node.js and npm installed on your local machine.
 
-### Installation
+### Installation 💻
 
 1. Clone the repository:
    ```
@@ -27,7 +27,7 @@ Ensure you have Node.js and npm installed on your local machine.
    npm install
    ```
 
-### Running the Application
+### Running the Application ▶️
 
 Start the application using the following command:
 ```
@@ -36,11 +36,11 @@ npm start
 
 The application will start running on http://localhost:3000 by default.
 
-### Deployment
+### Deployment 🌐
 
 You can deploy this application to platforms like Heroku or AWS. Make sure you have set up the necessary environment variables and configuration files for deployment.
 
-### Files Included
+### Files Included 📁
 
 - `index.js`: This file contains the main code for the Node.js application.
 - `package.json`: This file specifies the project's dependencies and scripts.
@@ -48,18 +48,18 @@ You can deploy this application to platforms like Heroku or AWS. Make sure you h
 - `Procfile`: This file specifies the commands that are executed by the app on Heroku deployment.
 - `node_modules/`: This directory contains the project's dependencies. Note that this directory is not included in the repository.
 
-### Testing
+### Testing 🧪
 
 This project does not have specific test cases implemented yet. You can add your own test cases using testing frameworks like Mocha, Jest, or Jasmine.
 
-### Contributing
+### Contributing 🤝
 
 If you'd like to contribute to this project, please fork the repository, make your changes, and create a pull request. Your contributions are welcome!
 
-### Authors
+### Authors ✍️
 
 - [Kshitiz Raj Paudyal](https://github.com/Kshitiz726) - Initial work
 
-### License
+### License 📄
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
