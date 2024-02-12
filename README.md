@@ -58,7 +58,7 @@ If you'd like to contribute to this project, please fork the repository, make yo
 
 ### Authors
 
-- [Your Name](https://github.com/yourusername) - Initial work
+- [Kshitiz Raj Paudyal](https://github.com/Kshitiz726) - Initial work
 
 ### License
 
